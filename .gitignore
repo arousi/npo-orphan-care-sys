@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+
+# LibreOffice lock files
+.~lock.*
+
+# Generated exports (keep folder but ignore contents)
+exports/data/
+exports/export.log
+
+# Backups
+*.bak
+*.ods.bak
+*.xlsx.bak

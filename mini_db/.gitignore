@@ -1,0 +1,54 @@
+# Virtual Environment
+npo_venv/
+.venv/
+venv/
+env/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+__pycache__/
+*.pyc
+*.pyo
+
+# PyInstaller
+*.manifest
+*.spec
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+.env
+
+# Logs and temporary files
+logs/
+*.log
+*.tmp
+
+# Reports (but keep example reports)
+reports/
+!reports/example/
+
+# Backups (local, should be versioned separately)
+data/backups/
+data/.DS_Store
+
+# Database locks
+*.db-journal
+.~lock.*
+
+# PyCharm
+.mypy_cache/
+.pytest_cache/
+
+# Misc
+*.txt~
+dist.zip
