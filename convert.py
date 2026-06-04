@@ -1,3 +1,24 @@
+"""
+Workbook scanner for the NPO Orphan Care System.
+
+Reads a LibreOffice Calc workbook (main.ods), detects form layouts on
+dashboard sheets, extracts data tables, maps foreign-key relationships,
+and exports everything as structured JSON.
+
+Usage:
+    python convert.py
+    # Select workbook from the numbered list.
+
+Output (written to exports/):
+    forms.json          — detected form blocks (headers, fields, coordinates)
+    schema.json          — per-sheet column metadata
+    relationships.json   — detected FK relationships
+    lookups.json         — small reference tables (≤3 columns with id)
+    workbook_metadata.json
+    data/*.json          — raw records per entity sheet
+    export.log           — processing log
+"""
+
 import os
 import json
 import logging
@@ -49,6 +70,7 @@ FORM_FIELD_EMPTY_GAP = 10
 
 
 def list_spreadsheets():
+    """Return a list of .ods and .xlsx files in the current directory."""
     return [
         f for f in os.listdir(".")
         if f.lower().endswith(SUPPORTED_EXTENSIONS)
@@ -56,12 +78,18 @@ def list_spreadsheets():
 
 
 def load_workbook(path):
+    """Read a spreadsheet workbook into a dict of sheet_name → DataFrame.
+
+    Uses the odf engine for .ods files and openpyxl for .xlsx.
+    All sheets are read with header=None to preserve raw cell positions.
+    """
     ext = Path(path).suffix.lower()
     engine = "odf" if ext == ".ods" else "openpyxl"
     return pd.read_excel(path, sheet_name=None, engine=engine, header=None)
 
 
 def to_excel_coordinate(row_idx, col_idx):
+    """Convert zero-based (row, col) to Excel notation, e.g. (0, 0) → 'A1'."""
     result = ""
     col = col_idx + 1
     while col > 0:
@@ -74,9 +102,14 @@ def to_excel_coordinate(row_idx, col_idx):
 # TABLE SCHEMA & RECORD PARSER
 # ============================================================
 def extract_table_data(df):
-    """
-    Finds the first non-empty row to establish column headers,
-    then processes subsequent records using those headers.
+    """Parse a DataFrame as a flat data table.
+
+    The first non-empty row is treated as column headers. Subsequent
+    non-empty rows are parsed into dicts keyed by those headers.
+
+    Returns:
+        columns_metadata: list of {"name": str, "type": "text"}
+        records: list of dicts, one per data row
     """
     rows, cols = df.shape
     header_row_idx = None
@@ -130,6 +163,20 @@ def _is_form_header(cell_value):
 
 
 def parse_spatial_forms(df, sheet_name):
+    """Detect spatial form blocks in a dashboard sheet.
+
+    Scans every cell for form headers (cells whose text contains a
+    FORM_PREFIX word and ends with 'form'). For each header, walks
+    downward in the same column to collect field labels, then scans
+    all remaining rows in adjacent columns for text-based buttons.
+
+    A form with no fields gets a note; a form with no text buttons gets
+    a note (buttons are typically shape-assigned macros, not text).
+
+    Returns:
+        forms: list of form dicts (title, coordinate, fields, buttons, notes)
+        has_forms: bool — True if any form header was found
+    """
     forms = []
     rows, cols = df.shape
     grid = df.fillna("").map(lambda x: str(x).strip())
@@ -213,6 +260,16 @@ def parse_spatial_forms(df, sheet_name):
 # RELATIONSHIP DETECTION
 # ============================================================
 def detect_relationships(schema):
+    """Infer foreign-key relationships from column naming conventions.
+
+    Every column ending in ``_id`` (except ``id`` itself and those listed
+    in FK_SKIP_PATTERNS) is treated as a potential FK. The base name
+    (without ``_id``) is looked up in FK_ALIASES first, then tried
+    against sheet names with simple pluralization heuristics.
+
+    Returns:
+        list of {"from_table", "from_column", "to_table", "to_column"}
+    """
     relationships = []
     table_names = set(schema.keys())
 
@@ -255,6 +312,7 @@ def detect_relationships(schema):
 
 
 def save_json(path, obj):
+    """Write a JSON file with consistent formatting (indent=2, utf-8)."""
     with open(path, "w", encoding="utf-8") as f:
         json.dump(obj, f, indent=2, ensure_ascii=False, default=str)
 
@@ -263,6 +321,14 @@ def save_json(path, obj):
 # MAIN ENGINE
 # ============================================================
 def export_workbook(input_file):
+    """Run the full analysis pipeline on a workbook and write exports/.
+
+    Pipeline:
+        1. Load workbook via pandas.
+        2. For each sheet: detect forms → extract data → detect lookups.
+        3. Infer cross-sheet relationships.
+        4. Write all outputs (schema, forms, relationships, lookups, data/*).
+    """
     logging.info(f"Starting workbook analysis extraction pipeline for: {input_file}")
     try:
         workbook = load_workbook(input_file)
@@ -336,6 +402,7 @@ def export_workbook(input_file):
 
 
 def main():
+    """CLI entry point: list workbooks, let user pick one, run export."""
     files = list_spreadsheets()
     if not files:
         logging.warning("No file sources matched .ods or .xlsx within directory boundaries.")
