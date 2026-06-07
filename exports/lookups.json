@@ -1,0 +1,149 @@
+{
+  "Employees": {
+    "sheet_name": "Employees",
+    "values": []
+  },
+  "Family_member": {
+    "sheet_name": "Family_member",
+    "values": []
+  },
+  "Reps": {
+    "sheet_name": "Reps",
+    "values": []
+  },
+  "deposit type": {
+    "sheet_name": "deposit type",
+    "values": [
+      {
+        "id": "",
+        "name": "cash",
+        "is_recurring": ""
+      },
+      {
+        "id": "",
+        "name": "bank transfer",
+        "is_recurring": ""
+      }
+    ]
+  },
+  "document type": {
+    "sheet_name": "document type",
+    "values": [
+      {
+        "id": "",
+        "name": "National ID"
+      },
+      {
+        "id": "",
+        "name": "Passport"
+      },
+      {
+        "id": "",
+        "name": "Medical Report"
+      },
+      {
+        "id": "",
+        "name": "Death Certificate"
+      },
+      {
+        "id": "",
+        "name": "Birth Certificate"
+      }
+    ]
+  },
+  "spons_type": {
+    "sheet_name": "spons_type",
+    "values": [
+      {
+        "id": "",
+        "type": "yearly"
+      },
+      {
+        "id": "",
+        "type": "monthly"
+      },
+      {
+        "id": "",
+        "type": "1-time"
+      }
+    ]
+  },
+  "Banks": {
+    "sheet_name": "Banks",
+    "values": [
+      {
+        "id": "1",
+        "name": "Jumhurya"
+      },
+      {
+        "id": "2",
+        "name": "Islamic"
+      },
+      {
+        "id": "3",
+        "name": "Nuran"
+      },
+      {
+        "id": "4",
+        "name": "NCB"
+      },
+      {
+        "id": "5",
+        "name": ""
+      },
+      {
+        "id": "6",
+        "name": ""
+      },
+      {
+        "id": "7",
+        "name": ""
+      },
+      {
+        "id": "8",
+        "name": ""
+      },
+      {
+        "id": "9",
+        "name": ""
+      },
+      {
+        "id": "10",
+        "name": ""
+      }
+    ]
+  },
+  "City": {
+    "sheet_name": "City",
+    "values": [
+      {
+        "id": "1",
+        "name": "Tripoli"
+      },
+      {
+        "id": "2",
+        "name": "Zawia"
+      },
+      {
+        "id": "3",
+        "name": "Misurata"
+      },
+      {
+        "id": "4",
+        "name": "Zintan"
+      },
+      {
+        "id": "5",
+        "name": "Tarhuna"
+      },
+      {
+        "id": "6",
+        "name": "Tajura"
+      }
+    ]
+  },
+  "Schools": {
+    "sheet_name": "Schools",
+    "values": []
+  }
+}

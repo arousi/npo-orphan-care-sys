@@ -1,0 +1,714 @@
+{
+  "input_dashboards": {
+    "source_file": "main.ods",
+    "sheet_name": "input_dashboards",
+    "row_count": 53,
+    "columns": [
+      {
+        "name": "Register Person Form تسجيل شخص جديد",
+        "type": "text"
+      },
+      {
+        "name": "Column_1",
+        "type": "text"
+      },
+      {
+        "name": "Column_2",
+        "type": "text"
+      },
+      {
+        "name": "Column_3",
+        "type": "text"
+      },
+      {
+        "name": "Add Payment Form إضافة دفع ليتيم",
+        "type": "text"
+      },
+      {
+        "name": "Column_5",
+        "type": "text"
+      },
+      {
+        "name": "Column_6",
+        "type": "text"
+      },
+      {
+        "name": "Column_7",
+        "type": "text"
+      },
+      {
+        "name": "Column_8",
+        "type": "text"
+      },
+      {
+        "name": "Add Representative Form إضافة ممثل قانوني",
+        "type": "text"
+      },
+      {
+        "name": "Column_10",
+        "type": "text"
+      },
+      {
+        "name": "Column_11",
+        "type": "text"
+      },
+      {
+        "name": "Column_12",
+        "type": "text"
+      },
+      {
+        "name": "Column_13",
+        "type": "text"
+      },
+      {
+        "name": "Add Donor Form إضافة متبرع",
+        "type": "text"
+      }
+    ]
+  },
+  "Persons": {
+    "source_file": "main.ods",
+    "sheet_name": "Persons",
+    "row_count": 0,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "first_name",
+        "type": "text"
+      },
+      {
+        "name": "middle_name",
+        "type": "text"
+      },
+      {
+        "name": "last_name",
+        "type": "text"
+      },
+      {
+        "name": "gender",
+        "type": "text"
+      },
+      {
+        "name": "birth_date",
+        "type": "text"
+      },
+      {
+        "name": "national_id",
+        "type": "text"
+      },
+      {
+        "name": "contact_id",
+        "type": "text"
+      },
+      {
+        "name": "city_id",
+        "type": "text"
+      },
+      {
+        "name": "bank_account-id",
+        "type": "text"
+      }
+    ]
+  },
+  "Employees": {
+    "source_file": "main.ods",
+    "sheet_name": "Employees",
+    "row_count": 0,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "person_id",
+        "type": "text"
+      },
+      {
+        "name": "role",
+        "type": "text"
+      }
+    ]
+  },
+  "Families": {
+    "source_file": "main.ods",
+    "sheet_name": "Families",
+    "row_count": 0,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "status",
+        "type": "text"
+      },
+      {
+        "name": "rep_id",
+        "type": "text"
+      },
+      {
+        "name": "number_of_children",
+        "type": "text"
+      }
+    ]
+  },
+  "Family_member": {
+    "source_file": "main.ods",
+    "sheet_name": "Family_member",
+    "row_count": 0,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "family_id",
+        "type": "text"
+      },
+      {
+        "name": "person_id",
+        "type": "text"
+      }
+    ]
+  },
+  "Reps": {
+    "source_file": "main.ods",
+    "sheet_name": "Reps",
+    "row_count": 0,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "person_id",
+        "type": "text"
+      },
+      {
+        "name": "family_id",
+        "type": "text"
+      }
+    ]
+  },
+  "Orphans": {
+    "source_file": "main.ods",
+    "sheet_name": "Orphans",
+    "row_count": 0,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "person_id",
+        "type": "text"
+      },
+      {
+        "name": "family_id",
+        "type": "text"
+      },
+      {
+        "name": "school_id",
+        "type": "text"
+      },
+      {
+        "name": "health",
+        "type": "text"
+      },
+      {
+        "name": "is_adult",
+        "type": "text"
+      },
+      {
+        "name": "rep_id",
+        "type": "text"
+      },
+      {
+        "name": "sponsorhip_id",
+        "type": "text"
+      }
+    ]
+  },
+  "Donors": {
+    "source_file": "main.ods",
+    "sheet_name": "Donors",
+    "row_count": 0,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "person_id",
+        "type": "text"
+      },
+      {
+        "name": "Column_2",
+        "type": "text"
+      },
+      {
+        "name": "status",
+        "type": "text"
+      }
+    ]
+  },
+  "deposit type": {
+    "source_file": "main.ods",
+    "sheet_name": "deposit type",
+    "row_count": 2,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "name",
+        "type": "text"
+      },
+      {
+        "name": "is_recurring",
+        "type": "text"
+      }
+    ]
+  },
+  "Deposits": {
+    "source_file": "main.ods",
+    "sheet_name": "Deposits",
+    "row_count": 0,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "donor_id",
+        "type": "text"
+      },
+      {
+        "name": "amount",
+        "type": "text"
+      },
+      {
+        "name": "currency",
+        "type": "text"
+      },
+      {
+        "name": "date_deposited",
+        "type": "text"
+      },
+      {
+        "name": "type_id",
+        "type": "text"
+      },
+      {
+        "name": "reference",
+        "type": "text"
+      }
+    ]
+  },
+  "Documents": {
+    "source_file": "main.ods",
+    "sheet_name": "Documents",
+    "row_count": 0,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "paths",
+        "type": "text"
+      },
+      {
+        "name": "type_id",
+        "type": "text"
+      },
+      {
+        "name": "path",
+        "type": "text"
+      },
+      {
+        "name": "issue_date",
+        "type": "text"
+      },
+      {
+        "name": "expiry_date",
+        "type": "text"
+      },
+      {
+        "name": "reference",
+        "type": "text"
+      }
+    ]
+  },
+  "document type": {
+    "source_file": "main.ods",
+    "sheet_name": "document type",
+    "row_count": 5,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "name",
+        "type": "text"
+      }
+    ]
+  },
+  "Sponsorships": {
+    "source_file": "main.ods",
+    "sheet_name": "Sponsorships",
+    "row_count": 0,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "orphan_id",
+        "type": "text"
+      },
+      {
+        "name": "family_id",
+        "type": "text"
+      },
+      {
+        "name": "donor_id",
+        "type": "text"
+      },
+      {
+        "name": "start_date",
+        "type": "text"
+      },
+      {
+        "name": "end_date",
+        "type": "text"
+      },
+      {
+        "name": "type_id",
+        "type": "text"
+      },
+      {
+        "name": "status",
+        "type": "text"
+      },
+      {
+        "name": "deposit_id",
+        "type": "text"
+      }
+    ]
+  },
+  "spons_type": {
+    "source_file": "main.ods",
+    "sheet_name": "spons_type",
+    "row_count": 3,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "type",
+        "type": "text"
+      }
+    ]
+  },
+  "Assessments": {
+    "source_file": "main.ods",
+    "sheet_name": "Assessments",
+    "row_count": 0,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "family_id",
+        "type": "text"
+      },
+      {
+        "name": "rep_id",
+        "type": "text"
+      },
+      {
+        "name": "date",
+        "type": "text"
+      },
+      {
+        "name": "salary",
+        "type": "text"
+      },
+      {
+        "name": "side_income",
+        "type": "text"
+      },
+      {
+        "name": "gov_support_daman",
+        "type": "text"
+      },
+      {
+        "name": "gov_support_tadamun",
+        "type": "text"
+      },
+      {
+        "name": "gov_support_child",
+        "type": "text"
+      },
+      {
+        "name": "rent",
+        "type": "text"
+      },
+      {
+        "name": "total_income",
+        "type": "text"
+      },
+      {
+        "name": "net_income",
+        "type": "text"
+      },
+      {
+        "name": "is_accepted",
+        "type": "text"
+      }
+    ]
+  },
+  "Payments": {
+    "source_file": "main.ods",
+    "sheet_name": "Payments",
+    "row_count": 0,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "donor_id",
+        "type": "text"
+      },
+      {
+        "name": "orphan_id",
+        "type": "text"
+      },
+      {
+        "name": "sponsorship_id",
+        "type": "text"
+      },
+      {
+        "name": "amount",
+        "type": "text"
+      },
+      {
+        "name": "payment_date",
+        "type": "text"
+      },
+      {
+        "name": "method",
+        "type": "text"
+      },
+      {
+        "name": "reference_number",
+        "type": "text"
+      },
+      {
+        "name": "status",
+        "type": "text"
+      },
+      {
+        "name": "type",
+        "type": "text"
+      }
+    ]
+  },
+  "Banks": {
+    "source_file": "main.ods",
+    "sheet_name": "Banks",
+    "row_count": 10,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "name",
+        "type": "text"
+      }
+    ]
+  },
+  "Bank Branches": {
+    "source_file": "main.ods",
+    "sheet_name": "Bank Branches",
+    "row_count": 9,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "name",
+        "type": "text"
+      },
+      {
+        "name": "location",
+        "type": "text"
+      },
+      {
+        "name": "bank_id",
+        "type": "text"
+      }
+    ]
+  },
+  "Bank_account": {
+    "source_file": "main.ods",
+    "sheet_name": "Bank_account",
+    "row_count": 0,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "number",
+        "type": "text"
+      },
+      {
+        "name": "iban",
+        "type": "text"
+      },
+      {
+        "name": "person_id",
+        "type": "text"
+      }
+    ]
+  },
+  "Contact": {
+    "source_file": "main.ods",
+    "sheet_name": "Contact",
+    "row_count": 0,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "primary_phone",
+        "type": "text"
+      },
+      {
+        "name": "phone2",
+        "type": "text"
+      },
+      {
+        "name": "address",
+        "type": "text"
+      },
+      {
+        "name": "whatsapp",
+        "type": "text"
+      }
+    ]
+  },
+  "Audit": {
+    "source_file": "main.ods",
+    "sheet_name": "Audit",
+    "row_count": 0,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "created_at",
+        "type": "text"
+      },
+      {
+        "name": "created_by",
+        "type": "text"
+      },
+      {
+        "name": "updated_at",
+        "type": "text"
+      },
+      {
+        "name": "updated_by",
+        "type": "text"
+      },
+      {
+        "name": "table_name",
+        "type": "text"
+      },
+      {
+        "name": "action",
+        "type": "text"
+      },
+      {
+        "name": "reason",
+        "type": "text"
+      }
+    ]
+  },
+  "City": {
+    "source_file": "main.ods",
+    "sheet_name": "City",
+    "row_count": 6,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "name",
+        "type": "text"
+      }
+    ]
+  },
+  "Schools": {
+    "source_file": "main.ods",
+    "sheet_name": "Schools",
+    "row_count": 0,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "name",
+        "type": "text"
+      },
+      {
+        "name": "city_id",
+        "type": "text"
+      }
+    ]
+  },
+  "criteria": {
+    "source_file": "main.ods",
+    "sheet_name": "criteria",
+    "row_count": 0,
+    "columns": [
+      {
+        "name": "id",
+        "type": "text"
+      },
+      {
+        "name": "number_of_children",
+        "type": "text"
+      },
+      {
+        "name": "net_income",
+        "type": "text"
+      },
+      {
+        "name": "min_amount",
+        "type": "text"
+      },
+      {
+        "name": "max_amount",
+        "type": "text"
+      }
+    ]
+  }
+}

@@ -1,0 +1,164 @@
+[
+  {
+    "from_table": "Persons",
+    "from_column": "contact_id",
+    "to_table": "Contact",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Persons",
+    "from_column": "city_id",
+    "to_table": "City",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Employees",
+    "from_column": "person_id",
+    "to_table": "Persons",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Families",
+    "from_column": "rep_id",
+    "to_table": "Reps",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Family_member",
+    "from_column": "family_id",
+    "to_table": "Families",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Family_member",
+    "from_column": "person_id",
+    "to_table": "Persons",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Reps",
+    "from_column": "person_id",
+    "to_table": "Persons",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Reps",
+    "from_column": "family_id",
+    "to_table": "Families",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Orphans",
+    "from_column": "person_id",
+    "to_table": "Persons",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Orphans",
+    "from_column": "family_id",
+    "to_table": "Families",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Orphans",
+    "from_column": "school_id",
+    "to_table": "Schools",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Orphans",
+    "from_column": "rep_id",
+    "to_table": "Reps",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Orphans",
+    "from_column": "sponsorhip_id",
+    "to_table": "Sponsorships",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Donors",
+    "from_column": "person_id",
+    "to_table": "Persons",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Deposits",
+    "from_column": "donor_id",
+    "to_table": "Donors",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Sponsorships",
+    "from_column": "orphan_id",
+    "to_table": "Orphans",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Sponsorships",
+    "from_column": "family_id",
+    "to_table": "Families",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Sponsorships",
+    "from_column": "donor_id",
+    "to_table": "Donors",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Sponsorships",
+    "from_column": "deposit_id",
+    "to_table": "Deposits",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Assessments",
+    "from_column": "family_id",
+    "to_table": "Families",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Assessments",
+    "from_column": "rep_id",
+    "to_table": "Reps",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Payments",
+    "from_column": "donor_id",
+    "to_table": "Donors",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Payments",
+    "from_column": "orphan_id",
+    "to_table": "Orphans",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Payments",
+    "from_column": "sponsorship_id",
+    "to_table": "Sponsorships",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Bank Branches",
+    "from_column": "bank_id",
+    "to_table": "Banks",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Bank_account",
+    "from_column": "person_id",
+    "to_table": "Persons",
+    "to_column": "id"
+  },
+  {
+    "from_table": "Schools",
+    "from_column": "city_id",
+    "to_table": "City",
+    "to_column": "id"
+  }
+]
